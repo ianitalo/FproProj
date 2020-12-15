@@ -18,7 +18,7 @@
 ### UI
 
 (a fazer)
-![UI](https://github.com/fpro-feup/public/blob/master/recitas/ui.png)
+![UI]
 
 ### Pacotes
 
@@ -35,4 +35,4 @@
 7. verificar se jogador chegou à saida
 8. entregar pontuação
 
-- Atualizado a última vez em 07/12/2020
+- Atualizado a última vez em 15/12/2020
