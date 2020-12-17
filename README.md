@@ -5,20 +5,15 @@
 
 ### Objetivo
 
-1. Criar um clone do Flicky (Mega Drive)
-
-### Repositório de código
-
-1) Link para o repositório do GitHub: https://github.com/ianitalo/FproProj
+Criar um clone do Flicky (Mega Drive)
 
 ### Descrição
 
-*---É um jogo que tem como objetivo coletar e levar o maximo de filhotes para a saída no menor tempo possível, enquanto foge dos gatos---*
+Flicky é um jogo de acção da Mega Drive com plataformas, em que o jogador é um pássaro que tem que pegar em passarinhos bebés e levá-los para a saída. Existem gatos que os tentam apanhar.
 
 ### UI
 
-(a fazer)
-![UI]
+![UI](ui.png)
 
 ### Pacotes
 
@@ -26,13 +21,11 @@
 
 ### Tarefas
 
-1. carregar os níveis
-2. desenhar a matriz do nível
-3. ler teclas e mover o personagem
-4. coletar filhotes
-5. inimigos
-6. atingir inimigos 
-7. verificar se jogador chegou à saida
-8. entregar pontuação
-
-- Atualizado a última vez em 15/12/2020
+1. [ ] carregar os níveis
+1. [ ] desenhar a matriz do nível
+1. [ ] ler teclas e mover o personagem
+1. [ ] coletar filhotes
+1. [ ] inimigos
+1. [ ] atingir inimigos 
+1. [ ] verificar se jogador chegou à saida
+1. [ ] entregar pontuação
