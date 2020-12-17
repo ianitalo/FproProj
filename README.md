@@ -1,4 +1,4 @@
-# Projeto XXXX
+# Projeto Flicky
 ## FPRO/MIEIC, 2020/21
 ## Ian Italo Martins Gomes (up202000707)
 ## 1MIEIC07
