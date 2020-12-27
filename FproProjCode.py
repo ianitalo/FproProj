@@ -18,7 +18,6 @@ playerimg = pygame.image.load("D:/GitHub/FproProj/img/bird.png")
 playerX = 20
 playerY = 808
 playerX_change = 0
-playerY_change = 0
 clock = pygame.time.Clock()
 
 def player(x,y):
@@ -26,7 +25,8 @@ def player(x,y):
 
 #Game loop
 running = True
-Jump = False
+isJump = False
+jumpcount = 15
 while running:   
     clock.tick(60)
     screen.fill((0,255,0))
@@ -36,27 +36,35 @@ while running:
             running = False
             pygame.quit()
         if event.type == pygame.KEYDOWN: 
-            if event.key == pygame.K_UP and playerY == 808:  #Provisory jump
-                playerY_change -= 5
-                Jump = True                
             if event.key == pygame.K_LEFT and playerX_change == 0:     #movement 
-                playerX_change -= 5              
+                playerX_change -= 10              
             if event.key == pygame.K_RIGHT and playerX_change == 0:
-                playerX_change += 5
+                playerX_change += 10
+            
         if event.type == pygame.KEYUP:
               if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
-                  playerX_change = 0        
-              if event.key == pygame.K_UP:
-                  Jump = False     
-    
-    #Provisory jump
-    if Jump == False and playerY < 808:
-        playerY_change = 5
+                  playerX_change = 0     
         
-        print(playerY)        
-    if playerY_change == 5 and playerY == 808 and Jump == False:
-        playerY_change = 0
-        playerY = 808
+        
+    keys = pygame.key.get_pressed()
+    if not isJump:
+        if keys[pygame.K_UP]:  #Provisory jump
+                isJump = True
+    else:
+        if jumpcount >= -15:
+            neg = 1
+            if jumpcount < 0:
+                neg = -1
+            playerY -= (jumpcount ** 2) /5 * neg
+            jumpcount -= 1
+        else:
+            isJump = False
+            jumpcount = 15 
+                   
+    
+    
+                      
+    
         
      
     #player stay on the screen
@@ -66,7 +74,6 @@ while running:
         playerX = 1568
                 
                 
-    playerX += playerX_change 
-    playerY += playerY_change           
+    playerX += playerX_change               
     player(playerX, playerY)  #draw the player
     pygame.display.update()
