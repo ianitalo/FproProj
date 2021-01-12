@@ -12,17 +12,17 @@ pygame.display.set_icon(icon)
 background = pygame.image.load("D:/GitHub/FproProj/img/corte1.png")
 
 #need to find the images of the movement
-walkRight = [pygame.image.load('img/bird.png'), pygame.image.load('img/bird.png'), 
-             pygame.image.load('img/bird.png'), pygame.image.load('img/bird.png'), 
-             pygame.image.load('img/bird.png'), pygame.image.load('img/bird.png')]
-walkLeft = [pygame.image.load('img/bird.png'), pygame.image.load('img/bird.png'), 
-            pygame.image.load('img/bird.png'), pygame.image.load('img/bird.png'), 
-            pygame.image.load('img/bird.png'), pygame.image.load('img/bird.png')]
-playeridle = pygame.image.load("img/bird.png")
+walkRight = [pygame.image.load('img/Flickywalk1.png'), pygame.image.load('img/Flickywalk2.png'), 
+             pygame.image.load('img/Flickywalk1.png'), pygame.image.load('img/Flickywalk2.png'), 
+             pygame.image.load('img/Flickywalk1.png'), pygame.image.load('img/Flickywalk2.png')]
+walkLeft = [pygame.image.load('img/Flickywalkleft1.png'), pygame.image.load('img/Flickywalkleft2.png'), 
+             pygame.image.load('img/Flickywalkleft1.png'), pygame.image.load('img/Flickywalkleft2.png'), 
+             pygame.image.load('img/Flickywalkleft1.png'), pygame.image.load('img/Flickywalkleft2.png')]
+playeridle = pygame.image.load("img/Flickywalk1.png")
 
 
 playerX = 20
-playerY = 808
+playerY = 744
 playerX_change = 0
 clock = pygame.time.Clock()
 left = False
