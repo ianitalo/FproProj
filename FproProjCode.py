@@ -19,7 +19,12 @@ walkLeft = [pygame.image.load('img/Flickywalkleft1.png'), pygame.image.load('img
              pygame.image.load('img/Flickywalkleft1.png'), pygame.image.load('img/Flickywalkleft2.png'), 
              pygame.image.load('img/Flickywalkleft1.png'), pygame.image.load('img/Flickywalkleft2.png')]
 playeridle = pygame.image.load("img/Flickywalk1.png")
-
+jumpingright = [pygame.image.load("img/FlickyFlyRight1.png"),pygame.image.load("img/FlickyFlyRight2.png"),
+                pygame.image.load("img/FlickyFlyRight1.png"),pygame.image.load("img/FlickyFlyRight2.png"),
+                pygame.image.load("img/FlickyFlyRight1.png"),pygame.image.load("img/FlickyFlyRight2.png")]
+jumpingleft = [pygame.image.load("img/FlickyFlyleft1.png"),pygame.image.load("img/FlickyFlyleft2.png"),
+                pygame.image.load("img/FlickyFlyleft1.png"),pygame.image.load("img/FlickyFlyleft2.png"),
+                pygame.image.load("img/FlickyFlyleft1.png"),pygame.image.load("img/FlickyFlyleft2.png")]
 
 playerX = 20
 playerY = 744
@@ -33,10 +38,18 @@ walkcount = 0
 def draw():
     global walkcount
     screen.blit(background,(0,0))
-    screen.blit(playeridle,(playerX, playerY))
+    
     if walkcount + 1 >= 30:
-        walkcount = 0       
-    if left:  
+        walkcount = 0  
+    if isJump:
+        if right:
+            screen.blit(jumpingright[walkcount//5], (playerX,playerY))
+            walkcount += 1 
+        elif left:
+            screen.blit(jumpingleft[walkcount//5], (playerX,playerY))
+            walkcount += 1 
+        
+    elif left:  
         screen.blit(walkLeft[walkcount//5], (playerX,playerY))
         walkcount += 1                          
     elif right:
@@ -70,11 +83,11 @@ while running:
         if event.type == pygame.KEYUP:
               if event.key == pygame.K_LEFT:
                   playerX_change = 0     
-                  left = False
+                  
                   walkcount = 0
               if event.key == pygame.K_RIGHT:
                   playerX_change = 0
-                  right = False
+                  
                   walkcount = 0
         
     playerX += playerX_change
@@ -83,8 +96,7 @@ while running:
     if not isJump:
         if keys[pygame.K_UP]:  #jump
                 isJump = True
-                right = False
-                left = False
+                
                 walkcount = 0
     else:
         if jumpcount >= -15:
